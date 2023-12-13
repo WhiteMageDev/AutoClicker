@@ -1,0 +1,24 @@
+﻿<Window x:Class="AutoClicker.InputDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AutoClicker"
+        mc:Ignorable="d"
+        Title="Enter record name" SizeToContent="WidthAndHeight" ResizeMode="NoResize" Background="WhiteSmoke">
+    <Grid>
+        <StackPanel Orientation="Vertical" Margin="5">
+            <TextBox x:Name="InputTextBox"
+                     Margin="15"
+                     HorizontalAlignment="Center"
+                     VerticalAlignment="Center" Width="180"
+                     Height="40"
+                     VerticalContentAlignment="Center"
+                     HorizontalContentAlignment="Center"
+                     BorderThickness="1.6"
+                     MaxLength="16"
+                     BorderBrush="Gainsboro"/>
+            <Button Style="{StaticResource MyButtonStyleT}" Content="OK" Width="120" Height="40" Margin="0,0,0,15" Click="OK_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,38 @@
+﻿<Window x:Class="AutoClicker.ActionControlWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="New record" SizeToContent="WidthAndHeight" ResizeMode="NoResize" Background="WhiteSmoke">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="5" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="5"/>
+        </Grid.RowDefinitions>
+        <ListView Name="ActionsListView" Grid.Column="1" Grid.Row="1" Height="140" MaxWidth="300" VerticalAlignment="Top">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="#" Width="40" DisplayMemberBinding="{Binding Index}"/>
+                    <GridViewColumn Header="Action" Width="auto" DisplayMemberBinding="{Binding MouseButtonStr}" />
+                    <GridViewColumn Header="Position" Width="auto" DisplayMemberBinding="{Binding MousePositionStr}" />
+                    <GridViewColumn Header="Delay (ms)" Width="70" DisplayMemberBinding="{Binding DelayStr}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="3" VerticalAlignment="Center">
+            <Button Style="{StaticResource MyButtonStyle}" Click="UpButton_Click" Tag="Res/up.png"/>
+            <Button Style="{StaticResource MyButtonStyle}" Click="DownButton_Click" Tag="Res/down.png"/>
+            <Button Style="{StaticResource MyButtonStyle}" Click="RemoveButton_Click" Tag="Res/trash.png"/>
+            <Button Style="{StaticResource MyButtonStyle}" Click="SaveButton_Click" Tag="Res/disk.png"/>
+        </StackPanel>
+    </Grid>
+</Window>
